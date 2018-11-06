@@ -1,7 +1,6 @@
 # Gomoku logic design based on xerwin's tutorial
 # http://www.cnblogs.com/erwin/p/7828956.html
 
-from enum import Enum
 from boardstate import *
 
 
