@@ -51,8 +51,8 @@ def sublist(small, big):
     '''
     Return True if small is a sublist of big.
     '''
-    for i in xrange(len(big)-len(small)+1):
-        for j in xrange(len(small)):
+    for i in range(len(big)-len(small)+1):
+        for j in range(len(small)):
             if big[i+j] != small[j]:
                 break
         else:

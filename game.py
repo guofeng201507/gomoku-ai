@@ -51,9 +51,9 @@ if __name__ == '__main__':
         for event in pygame.event.get():
             # exit
 
-            if event.type == QUIT:
+            if event.type == pygame.QUIT:
                 exit()
-            elif event.type == MOUSEBUTTONDOWN:
+            elif event.type == pygame.MOUSEBUTTONDOWN:
                 # play a step
                 if render.one_step():
                     result = gomoku.get_chess_result()

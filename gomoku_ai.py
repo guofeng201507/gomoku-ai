@@ -42,8 +42,7 @@ class gomokuAI(object):
         within 2 empty intersections.
         '''
         # exhaustive search for four axes
-        directions = [[(-1, 0), (1, 0)], [(0, -1), (0, 1)], [(-1, 1),
-                                                             (1, -1)], [(-1, -1), (1, 1)]]
+        directions = [[(-1, 0), (1, 0)], [(0, -1), (0, 1)], [(-1, 1), (1, -1)], [(-1, -1), (1, 1)]]
         for axis in directions:
             for (xdirection, ydirection) in axis:
 
@@ -180,16 +179,16 @@ class gomokuAI(object):
 
         # exhaustive search
 
-        for i in xrange(N):
+        for i in range(N):
             vectors.append(self.__gomoku.get_chessMap()[i])
 
-        for j in xrange(N):
+        for j in range(N):
             vectors.append([self.__gomoku.get_chessMap()[i][j] for i in
                             range(N)])
 
         vectors.append([self.__gomoku.get_chessMap()[x][x] for x in
                         range(N)])
-        for i in xrange(1, N - 4):
+        for i in range(1, N - 4):
             v = [self.__gomoku.get_chessMap()[x][x - i] for x in
                  range(i, N)]
             vectors.append(v)
@@ -199,12 +198,12 @@ class gomokuAI(object):
 
         vectors.append([self.__gomoku.get_chessMap()[x][N - x - 1]
                         for x in range(N)])
-        for i in xrange(4, N - 1):
+        for i in range(4, N - 1):
             v = [self.__gomoku.get_chessMap()[x][i - x] for x in
-                 xrange(i, -1, -1)]
+                 range(i, -1, -1)]
             vectors.append(v)
             v = [self.__gomoku.get_chessMap()[x][N - x + N - i - 2]
-                 for x in xrange(N - i - 1, N)]
+                 for x in range(N - i - 1, N)]
             vectors.append(v)
 
         # checkmate
@@ -225,8 +224,8 @@ class gomokuAI(object):
         Generate a list of available points for searching.
         '''
         frontierList = []
-        for i in xrange(N):
-            for j in xrange(N):
+        for i in range(N):
+            for j in range(N):
                 if self.__gomoku.get_chessMap()[i][j] \
                         != BoardState.EMPTY:
                     continue  # only search for available spots
@@ -267,16 +266,16 @@ class gomokuAI(object):
         # exhaustive search
         vectors = []
 
-        for i in xrange(N):
+        for i in range(N):
             vectors.append(self.__gomoku.get_chessMap()[i])
 
-        for j in xrange(N):
+        for j in range(N):
             vectors.append([self.__gomoku.get_chessMap()[i][j] for i in
                             range(N)])
 
         vectors.append([self.__gomoku.get_chessMap()[x][x] for x in
                         range(N)])
-        for i in xrange(1, N - 4):
+        for i in range(1, N - 4):
             v = [self.__gomoku.get_chessMap()[x][x - i] for x in
                  range(i, N)]
             vectors.append(v)
@@ -287,12 +286,12 @@ class gomokuAI(object):
         vectors.append([self.__gomoku.get_chessMap()[x][N - x - 1]
                         for x in range(N)])
 
-        for i in xrange(4, N - 1):
+        for i in range(4, N - 1):
             v = [self.__gomoku.get_chessMap()[x][i - x] for x in
-                 xrange(i, -1, -1)]
+                 range(i, -1, -1)]
             vectors.append(v)
             v = [self.__gomoku.get_chessMap()[x][N - x + N - i - 2]
-                 for x in xrange(N - i - 1, N)]
+                 for x in range(N - i - 1, N)]
             vectors.append(v)
 
         board_score = 0
@@ -380,8 +379,8 @@ class gomokuAI(object):
         return True
 
     def one_step(self):
-        for i in xrange(N):
-            for j in xrange(N):
+        for i in range(N):
+            for j in range(N):
                 if self.__gomoku.get_chessMap()[i][j] \
                         != BoardState.EMPTY:
                     continue  # only search for available spots
